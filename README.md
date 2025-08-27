@@ -5,7 +5,9 @@ Welcome, Radical Labs Developer!
 This is the main repository for Radical Labs application development. Resources for review should be pushed here.
 Please look at the To Do List for the project.
 
-* [Markdown Cheat Sheet](./Resources/Markdown%20Cheat%20Sheet.md)
+### Guides
+* [Markdown Cheat Sheet](./Resources/README.md)
+* [TortoiseGit](./TortoiseGit/README.md)
 
 ## To Do:
 * Review [Privacy Policy](./Review/Privacy%20Policy.md)
