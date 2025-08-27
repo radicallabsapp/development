@@ -5,7 +5,7 @@
 - [Cloning the Repository](#cloning-the-repository)
 - [Making Changes & Committing](#making-changes--committing)
 - [Pushing Your Work](#pushing-your-work)
-- [Quick Workflow Recap](#quick-workflow-recap)
+- [Quick Workflow Recap](#⬆️-quick-workflow-recap)
   
 ## 📖 Workflow Summary
 1. **Pull** before you start working (Ensures you are working on the latest version) .
