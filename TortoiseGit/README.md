@@ -1,10 +1,11 @@
 # 🐢 Working with TortoiseGit
 
-- [Workflow Summary](#⬇️_Workflow_Summary)
-- [Download & Install](#Download_&_Install)
-- [Cloning the Repository](#Cloning_the_Repository)
-- [Making Changes & Committing](#Making_Changes_&_Committing)
-- [Pushing Your Work](#⬆️_Pushing_Your_Work)
+- [Workflow Summary](#workflow-summary)
+- [Download & Install](#download--install)
+- [Cloning the Repository](#cloning-the-repository)
+- [Making Changes & Committing](#making-changes--committing)
+- [Pushing Your Work](#pushing-your-work)
+- [Quick Workflow Recap](#quick-workflow-recap)
   
 ## 📖 Workflow Summary
 1. **Pull** before you start working (Ensures you are working on the latest version) .
