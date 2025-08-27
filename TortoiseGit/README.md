@@ -23,7 +23,8 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 2. Hover over **TortoiseGit** and Select **Clone...**  
    ![Clone dialog](./images/clone.png)
 
-3. Paste the repo URL:
+3. Paste the repo URL. Get the URL from **Code** and copy the HTTP link.
+   ![Clone dialog](./images/clone-repo.png)
    
 4. Click **OK** – TortoiseGit will download the files.  
    ![Clone progress](./images/clone-progress.png)
