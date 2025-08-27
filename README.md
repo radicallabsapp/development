@@ -7,5 +7,6 @@ This is the main repository for Radical Labs application development. Resources 
 ### Guides
 * [Markdown Cheat Sheet](./Resources/README.md)
 * [TortoiseGit](./TortoiseGit/README.md)
+* [Pi Network SDK](https://github.com/pi-apps/pi-platform-docs)
 
 ---
