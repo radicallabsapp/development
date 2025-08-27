@@ -8,12 +8,12 @@ This repository is the central place for developing and managing our application
 ```
 development/
 ├── README.md
-├── resources/
+├── Resources/
 │   ├── TortoiseGit/
 │   └── Markdown/  
-├── review/
+├── Review/
 │   └── documentsUnderReview.md   
-└── projects/                <-- Application source code
+└── Projects/                <-- Application source code
     ├── README.md
     └── projectName/          
 ```
@@ -27,8 +27,8 @@ development/
 
 ## 🚀 Quick Start Guides
 
-* [Markdown Cheat Sheet](./Resources/README.md)
-* [TortoiseGit](./TortoiseGit/README.md)
+* [Markdown Cheat Sheet](./Resources/Markdown/README.md)
+* [TortoiseGit](./Resources/TortoiseGit/README.md)
 * [Pi Network SDK](https://github.com/pi-apps/pi-platform-docs)
 
 ---
