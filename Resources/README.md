@@ -4,6 +4,8 @@ Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
 
 This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for [basic syntax](https://www.markdownguide.org/basic-syntax/) and [extended syntax](https://www.markdownguide.org/extended-syntax/).
 
+---
+
 ## Basic Syntax
 
 These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.
@@ -26,6 +28,8 @@ Each syntax element is listed, with an example of the output and the markdown so
 - [Task List](#Task-List)
 - [Emoji](#Emoji)
 
+---
+
 ### Heading
 # Heading 1
 ## Heading 2
@@ -35,24 +39,28 @@ Each syntax element is listed, with an example of the output and the markdown so
 ## Heading 2
 ### Heading 3
 ```
+---
 
 ### Bold
 **bold text**
 ```
 **bold text**
 ```
+---
 
 ### Italic
 *italicized text*
 ```
 *italicized text*
 ```
+---
 
 ### Blockquote
 > blockquote
 ```
 > blockquote
 ```
+---
 
 ### Ordered List
 
@@ -64,6 +72,7 @@ Each syntax element is listed, with an example of the output and the markdown so
 2. Second item
 3. Third item
 ```
+---
 
 ### Unordered List
 - First item
@@ -74,32 +83,33 @@ Each syntax element is listed, with an example of the output and the markdown so
 - Second item
 - Third item
 ```
+---
 
 ### Code
-`code`
+`function()`
 ```
-`code`
+`function()`
 ```
+---
 
 ### Horizontal Rule
 ---
 ```
 ---
 ```
+---
 ### Link
 [Markdown Guide](https://www.markdownguide.org)
 ```
 [Markdown Guide](https://www.markdownguide.org)
 ```
+---
 ### Image
 ![alt text](https://www.markdownguide.org/assets/images/tux.png)
 ```
 ![alt text](https://www.markdownguide.org/assets/images/tux.png)
 ```
-
-## Extended Syntax
-These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
-
+---
 ### Table
 | Syntax | Description |
 | ----------- | ----------- |
@@ -111,6 +121,7 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 | Header | Title |
 | Paragraph | Text |
 ```
+---
 ### Fenced Code Block
 ```
 {
@@ -121,6 +132,8 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 ```
 Open this README.md for syntax.
 
+---
+
 ### Footnote
 Here's a sentence with a footnote. [^1] <- **Click to view**
 [^1]: This is the footnote.
@@ -128,13 +141,13 @@ Here's a sentence with a footnote. [^1] <- **Click to view**
 Here's a sentence with a footnote. [^1]
 [^1]: This is the footnote.
 ```
-
+---
 ### Strikethrough
 ~~Draw: sprite sheets for enemy, player and background~~
 ```
 ~~Draw: sprite sheets for enemy, player and background~~
 ```
-
+---
 ### Task List
 
 - [x] Write the press release
@@ -145,10 +158,12 @@ Here's a sentence with a footnote. [^1]
 - [ ] Update the website
 - [ ] Contact the media
 ```
-
+---
 ### Emoji
 That is so funny! :joy:
 ```
 That is so funny! :joy:
 ```
 (See also [Copying and Pasting Emoji](https://www.markdownguide.org/extended-syntax/#copying-and-pasting-emoji))
+
+---
