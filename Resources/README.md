@@ -9,6 +9,9 @@ This Markdown cheat sheet provides a quick overview of all the Markdown syntax e
 These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.
 Each syntax element is listed, with an example of the output and the markdown source syntax used to produce the output.
 
+- [Heading](#Heading)
+- [Bold](#Bold)
+
 ### Heading
 # Heading 1
 ## Heading 2
