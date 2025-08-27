@@ -1,11 +1,9 @@
----
-
 ## 🐢 Working with TortoiseGit
 
 ### ✅ Workflow Summary
-1. **Pull** before you start working.  
-2. Make your changes.  
-3. **Commit** locally with a clear message.  
+1. **Pull** before you start working (Ensures you are working on the latest version) .
+2. Make your changes locally.  
+3. **Commit** locally with a clear message (Descrbe differences, files added/removed, etc.).  
 4. **Push** to share your work.
 
 If you are using **TortoiseGit** (Windows Git client), here’s how to work with this repository.
@@ -13,7 +11,8 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 1. Download TortoiseGit (from the official site) -> [https://tortoisegit.org/](https://tortoisegit.org/download/)
 2. Run the Setup Wizard
 3. Click `Next` (3 times) then `Install`
-4. **Additional Steps Missing**
+4. Use your GitHub credentials when signing in during install
+5. Leave all settings as default
 
 ---
 
@@ -35,7 +34,7 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 1. Right-click the repo folder → **TortoiseGit → Pull** (to get the latest version).  
    ![Pull dialog](./images/pull.png)
 
-2. Edit your files as needed.  
+2. Edit your files locally.  
 
 3. Right-click the repo folder → **Git Commit → "master"** (or your branch).  
    ![Commit dialog](./images/commit.png)
