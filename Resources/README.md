@@ -55,6 +55,7 @@ Each syntax element is listed, with an example of the output and the markdown so
 ```
 
 ### Ordered List
+
 1. First item
 2. Second item
 3. Third item
@@ -135,6 +136,7 @@ Here's a sentence with a footnote. [^1]
 ```
 
 ### Task List
+
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
