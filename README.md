@@ -5,6 +5,8 @@ Welcome, Radical Labs Developer!
 This is the main repository for Radical Labs application development. Resources for review should be pushed here.
 Please look at the To Do List for the project.
 
+* [Markdown Cheat Sheet](./Resources/Markdown%20Cheat%20Sheet.md)
+
 ## To Do:
 * Review [Privacy Policy](./Review/Privacy%20Policy.md)
 * Complete User Agreement
@@ -25,5 +27,3 @@ PJ:
 * ~~Privacy Policy~~ *-> Under review*
 * ~~⁠Wordpress (or alternative) website for viewing PP~~
 * ⁠~~We could possibly use GitHub to view PP in markdown format~~ *-> Decided to use GitHub*
-
-## <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/94de30ff-0f61-4205-8f89-275f95af58e0" />
