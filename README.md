@@ -6,7 +6,7 @@ This is the main repository for Radical Labs application development. Resources 
 Please look at the To Do List for the project.
 
 ## To Do:
-* Review [Privacy Policy](./Review/Privacy-Policy.md)
+* Review [Privacy Policy](./Review/Privacy%20Policy.md)
 * Complete User Agreement
 * Check out Godot Engine Tutorials
 * Setup GitHub for project planning workflows, resources, project folders, etc.
