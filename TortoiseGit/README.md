@@ -21,7 +21,7 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 1. Right-click in the folder where you want the repo.  
 
 2. Hover over **TortoiseGit** and Select **Clone...**  
-   ![Clone dialog](./clone.png)
+   ![Clone dialog](./images/clone.png)
 
 3. Paste the repo URL:
    
