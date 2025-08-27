@@ -2,6 +2,12 @@
 
 ## 🐢 Working with TortoiseGit
 
+### ✅ Workflow Summary
+1. **Pull** before you start working.  
+2. Make your changes.  
+3. **Commit** locally with a clear message.  
+4. **Push** to share your work.
+
 If you are using **TortoiseGit** (Windows Git client), here’s how to work with this repository.
 
 1. Download TortoiseGit (click `Download` on the home page):
@@ -13,7 +19,7 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 ### 🔽 Cloning the Repository
 1. Right-click in the folder where you want the repo.  
 
-2. Hover over TortoiseGit and Select **Clone...**  
+2. Hover over **TortoiseGit** and Select **Clone...**  
    ![Clone dialog](./clone.png)
 
 3. Paste the repo URL:
