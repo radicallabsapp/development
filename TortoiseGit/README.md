@@ -1,6 +1,6 @@
 # 🐢 Working with TortoiseGit
 
-- [Workflow Summary](#Workflow_Summary)
+- [Workflow Summary](#⬇️_Workflow_Summary)
 - [Download & Install](#Download_&_Install)
 - [Cloning the Repository](#Cloning_the_Repository)
 - [Making Changes & Committing](#Making_Changes_&_Committing)
