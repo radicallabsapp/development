@@ -11,7 +11,7 @@ Please look at the To Do List for the project.
 
 ## To Do:
 * Review [Privacy Policy](./Review/Privacy%20Policy.md)
-* Complete User Agreement
+* Create User Agreement [here](https://github.com/radicallabsapp/development/tree/main/Review) in `.md` format
 * Check out Godot Engine Tutorials
 * Setup GitHub for project planning workflows, resources, project folders, etc.
 
