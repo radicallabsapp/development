@@ -19,7 +19,6 @@ Each syntax element is listed, with an example of the output and the markdown so
 - [Horizontal Rule](#Horizontal_Rule)
 - [Link](#Link)
 - [Image](#Image)
-- [Extended Syntax](#Extended_Syntax)
 - [Table](#Table)
 - [Fenced Code Block](#Fenced_Code_Block)
 - [Footnote](#Footnote)
