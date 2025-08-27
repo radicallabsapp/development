@@ -38,21 +38,21 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 2. Edit your files as needed.  
 
 3. Right-click the repo folder → **Git Commit → "master"** (or your branch).  
-   ![Commit dialog](./commit.png)
+   ![Commit dialog](./images/commit.png)
 
 4. Enter a **clear commit message**, select changed files, and click **Commit**.  
-   ![Commit message](./message.png)
+   ![Commit message](./images/message.png)
 
 ---
 
 ### ⬆️ Pushing Your Work
 1. After committing, right-click the repo folder.  
 2. Choose **TortoiseGit → Push**.  
-   ![Push dialog](./tortoisegit-push.png)
+   ![Push dialog](./images/push.png)
 
 3. Confirm the correct remote (`origin`) and branch.  
 4. Click **OK** – your changes will be uploaded.  
-   ![Push progress](./tortoisegit-push-progress.png)
+   ![Push progress](./images/push-progress.png)
 
 ---
 
