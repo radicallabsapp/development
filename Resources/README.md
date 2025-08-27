@@ -11,6 +11,21 @@ Each syntax element is listed, with an example of the output and the markdown so
 
 - [Heading](#Heading)
 - [Bold](#Bold)
+- [Italic](#Italic)
+- [Blockquote](#Blockquote)
+- [Ordered List](#Ordered_List)
+- [Unordered List](#Unordered_List)
+- [Code](#Code)
+- [Horizontal Rule](#Horizontal_Rule)
+- [Link](#Link)
+- [Image](#Image)
+- [Extended Syntax](#Extended_Syntax)
+- [Table](#Table)
+- [Fenced Code Block](#Fenced_Code_Block)
+- [Footnote](#Footnote)
+- [Strikethrough](#Strikethrough)
+- [Task List](#Task_List)
+- [Emoji](#Emoji)
 
 ### Heading
 # Heading 1
@@ -107,7 +122,7 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 Open this README.md for syntax.
 
 ### Footnote
-Here's a sentence with a footnote. [^1]
+Here's a sentence with a footnote. [^1] <- **Click to view**
 [^1]: This is the footnote.
 ```
 Here's a sentence with a footnote. [^1]
