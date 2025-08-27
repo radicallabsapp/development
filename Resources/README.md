@@ -112,7 +112,7 @@ Here's a sentence with a footnote. [^1]
 ```
 
 ### Strikethrough
-~~Hello World!~~
+~~Draw: sprite sheets for enemy, player and background~~
 ```
 ~~Hello World!~~
 ```
