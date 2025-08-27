@@ -10,9 +10,10 @@
 
 If you are using **TortoiseGit** (Windows Git client), here’s how to work with this repository.
 
-1. Download TortoiseGit (click `Download` on the home page):
+1. Download TortoiseGit (from the official site) -> [https://tortoisegit.org/](https://tortoisegit.org/download/)
 2. Run the Setup Wizard
 3. Click `Next` (3 times) then `Install`
+4. **Additional Steps Missing**
 
 ---
 
@@ -25,32 +26,32 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 3. Paste the repo URL:
    
 4. Click **OK** – TortoiseGit will download the files.  
-   ![Clone progress](./images/clone-progress.png)
+   ![Clone progress](./clone-progress.png)
 
 ---
 
 ### ✍️ Making Changes & Committing
 1. Right-click the repo folder → **TortoiseGit → Pull** (to get the latest version).  
-   ![Pull dialog](./images/pull.png)
+   ![Pull dialog](./pull.png)
 
 2. Edit your files as needed.  
 
 3. Right-click the repo folder → **Git Commit → "master"** (or your branch).  
-   ![Commit dialog](./images/commit.png)
+   ![Commit dialog](./commit.png)
 
 4. Enter a **clear commit message**, select changed files, and click **Commit**.  
-   ![Commit message](./images/message.png)
+   ![Commit message](./message.png)
 
 ---
 
 ### ⬆️ Pushing Your Work
 1. After committing, right-click the repo folder.  
 2. Choose **TortoiseGit → Push**.  
-   ![Push dialog](./images/tortoisegit-push.png)
+   ![Push dialog](./tortoisegit-push.png)
 
 3. Confirm the correct remote (`origin`) and branch.  
 4. Click **OK** – your changes will be uploaded.  
-   ![Push progress](./images/tortoisegit-push-progress.png)
+   ![Push progress](./tortoisegit-push-progress.png)
 
 ---
 
