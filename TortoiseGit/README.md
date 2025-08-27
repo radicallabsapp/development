@@ -26,13 +26,13 @@ If you are using **TortoiseGit** (Windows Git client), here’s how to work with
 3. Paste the repo URL:
    
 4. Click **OK** – TortoiseGit will download the files.  
-   ![Clone progress](./clone-progress.png)
+   ![Clone progress](./images/clone-progress.png)
 
 ---
 
 ### ✍️ Making Changes & Committing
 1. Right-click the repo folder → **TortoiseGit → Pull** (to get the latest version).  
-   ![Pull dialog](./pull.png)
+   ![Pull dialog](./images/pull.png)
 
 2. Edit your files as needed.  
 
