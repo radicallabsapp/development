@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sprite Sheet Viewer</title>
+  <style>
+    body { display: flex; flex-direction: column; align-items: center; font-family: sans-serif; margin-top:20px; }
+    canvas { border: 1px solid #333; image-rendering: pixelated; margin-top: 10px; }
+    select, input, button { margin: 5px; }
+    #dropzone { border: 2px dashed #666; padding: 20px; margin: 10px; text-align: center; color: #666; width: 300px; }
+    .row { display: flex; align-items: center; margin-top: 10px; }
+    .row label { margin-right: 8px; font-weight: bold; }
+    #frameCounter { margin-top: 8px; font-size: 14px; color: #333; }
+  </style>
+</head>
+<body>
+  <h2>Sprite Sheet Preview</h2>
+
+  <div id="dropzone">Drop your PNG + JSON here<br>or use file picker below</div>
+  <input type="file" id="fileInput" multiple>
+
+  <div class="row">
+    <label for="animation">Animations:</label>
+    <select id="animation"></select>
+    <button id="playPause">Pause</button>
+    <button id="prevFrame" disabled>⬅</button>
+    <button id="nextFrame" disabled>➡</button>
+  </div>
+
+  <div class="row">
+    <label for="upscale">Upscale:</label>
+    <input type="number" id="upscale" value="1" min="1" max="10">
+    <span>x</span>
+  </div>
+
+  <div class="row">
+    <label for="speed">Speed:</label>
+    <input type="range" id="speed" min="0.1" max="3" value="1" step="0.1">
+    <span id="speedValue">1x</span>
+  </div>
+
+  <div class="row">
+    <label><input type="checkbox" id="customTiming"> Use per-frame timing</label>
+  </div>
+  <div id="frameTimingControls"></div>
+
+  <canvas id="canvas"></canvas>
+  <div id="frameCounter">Frame -/-</div>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    const select = document.getElementById("animation");
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("fileInput");
+    const upscaleInput = document.getElementById("upscale");
+
+    const playPauseBtn = document.getElementById("playPause");
+    const prevFrameBtn = document.getElementById("prevFrame");
+    const nextFrameBtn = document.getElementById("nextFrame");
+    const frameCounter = document.getElementById("frameCounter");
+
+    const speedInput = document.getElementById("speed");
+    const speedValue = document.getElementById("speedValue");
+    const customTiming = document.getElementById("customTiming");
+    const frameTimingControls = document.getElementById("frameTimingControls");
+
+    let sheet, atlas, sequences = {}, currentSeq = [], frameIndex = 0, lastTime = 0;
+    let playing = true;
+    let speedMultiplier = 1;
+
+    speedInput.oninput = () => {
+      speedMultiplier = parseFloat(speedInput.value);
+      speedValue.textContent = speedMultiplier.toFixed(1) + "x";
+    };
+
+    function handleFiles(files) {
+      let jsonFile = [...files].find(f => f.name.toLowerCase().endsWith(".json"));
+      let pngFile  = [...files].find(f => f.name.toLowerCase().endsWith(".png"));
+      if (!jsonFile || !pngFile) {
+        alert("Please provide both a PNG and a JSON file.");
+        return;
+      }
+
+      jsonFile.text().then(txt => {
+        atlas = JSON.parse(txt);
+        sequences = atlas.sequences || {};
+        select.innerHTML = "";
+        Object.keys(sequences).forEach(name => {
+          const opt = document.createElement("option");
+          opt.value = name; opt.textContent = name;
+          select.appendChild(opt);
+        });
+        select.onchange = () => {
+          currentSeq = sequences[select.value];
+          frameIndex = 0;
+          updateCanvasSize();
+          buildFrameTimingControls();
+        };
+        if (Object.keys(sequences).length) select.onchange();
+      });
+
+      const img = new Image();
+      img.onload = () => { sheet = img; startLoop(); };
+      img.src = URL.createObjectURL(pngFile);
+    }
+
+    function updateCanvasSize() {
+      if (!currentSeq || !currentSeq.length) return;
+      const scale = parseInt(upscaleInput.value) || 1;
+      canvas.width = currentSeq[0].w * scale;
+      canvas.height = currentSeq[0].h * scale;
+    }
+
+    function buildFrameTimingControls() {
+      frameTimingControls.innerHTML = "";
+      if (!currentSeq) return;
+      currentSeq.forEach((f, i) => {
+        const row = document.createElement("div");
+        row.className = "row";
+        row.innerHTML = `Frame ${i+1}: <input type="number" min="10" value="${f.duration_ms}" id="frameTime${i}" style="width:60px"> ms`;
+        frameTimingControls.appendChild(row);
+      });
+    }
+
+    function startLoop() {
+      function loop(ts) {
+        if (!currentSeq || !sheet) return;
+
+        let duration = currentSeq[frameIndex].duration_ms || 100;
+        if (!customTiming.checked) {
+          duration = duration / speedMultiplier;
+        } else {
+          const input = document.getElementById("frameTime" + frameIndex);
+          if (input) duration = parseInt(input.value) || duration;
+        }
+
+        if (playing && ts - lastTime > duration) {
+          frameIndex = (frameIndex + 1) % currentSeq.length;
+          lastTime = ts;
+        }
+        drawFrame();
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    }
+
+    function drawFrame() {
+      if (!currentSeq || !sheet) return;
+      const f = currentSeq[frameIndex];
+      const scale = parseInt(upscaleInput.value) || 1;
+
+      ctx.imageSmoothingEnabled = false;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(sheet, f.x, f.y, f.w, f.h, 0, 0, f.w * scale, f.h * scale);
+      frameCounter.textContent = `Frame ${frameIndex + 1}/${currentSeq.length}`;
+    }
+
+    playPauseBtn.onclick = () => {
+      playing = !playing;
+      playPauseBtn.textContent = playing ? "Pause" : "Play";
+      prevFrameBtn.disabled = playing;
+      nextFrameBtn.disabled = playing;
+    };
+
+    prevFrameBtn.onclick = () => {
+      if (!currentSeq) return;
+      frameIndex = (frameIndex - 1 + currentSeq.length) % currentSeq.length;
+      drawFrame();
+    };
+
+    nextFrameBtn.onclick = () => {
+      if (!currentSeq) return;
+      frameIndex = (frameIndex + 1) % currentSeq.length;
+      drawFrame();
+    };
+
+    dropzone.ondragover = e => { e.preventDefault(); dropzone.style.background="#eef"; };
+    dropzone.ondragleave = () => dropzone.style.background="";
+    dropzone.ondrop = e => { e.preventDefault(); dropzone.style.background=""; handleFiles(e.dataTransfer.files); };
+    fileInput.onchange = () => handleFiles(fileInput.files);
+    upscaleInput.oninput = updateCanvasSize;
+  </script>
+
+  <div class="row">
+    <label for="gifAnimation">GIF Export:</label>
+    <select id="gifAnimation">
+      <option value="current">Current Animation</option>
+      <option value="all">All Animations</option>
+    </select>
+    <label for="gifScale">Scale:</label>
+    <input type="number" id="gifScale" value="1" min="1" max="10">x
+    <button id="downloadGif">Download GIF</button>
+  </div>
+
+  <div class="row">
+    <button id="darkModeBtn">🌙 Dark Mode</button>
+    <button id="scrubBtn">🖱 Frame Scrubber</button>
+    <button id="randomizeBtn">🎲 Randomize</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gif.js.optimized/dist/gif.js"></script>
+  <script>
+    const gifBtn = document.getElementById("downloadGif");
+    const gifScale = document.getElementById("gifScale");
+    const gifAnimation = document.getElementById("gifAnimation");
+
+    gifBtn.onclick = () => {
+      if (!sheet || !atlas) return;
+      const gif = new GIF({ workers: 2, quality: 1, workerScript: "https://cdn.jsdelivr.net/npm/gif.js.optimized/dist/gif.worker.js" });
+      const scale = parseInt(gifScale.value) || 1;
+
+      let sequencesToExport = [];
+      if (gifAnimation.value === "current" && currentSeq) {
+        sequencesToExport = [{name: select.value, seq: currentSeq}];
+      } else {
+        sequencesToExport = Object.keys(sequences).map(name => ({name, seq: sequences[name]}));
+      }
+
+      sequencesToExport.forEach(obj => {
+        obj.seq.forEach(f => {
+          const offscreen = document.createElement("canvas");
+          offscreen.width = f.w * scale;
+          offscreen.height = f.h * scale;
+          const offctx = offscreen.getContext("2d");
+          offctx.imageSmoothingEnabled = false;
+          offctx.drawImage(sheet, f.x, f.y, f.w, f.h, 0, 0, f.w * scale, f.h * scale);
+          gif.addFrame(offscreen, {delay: f.duration_ms || 100});
+        });
+      });
+
+      gif.on("finished", blob => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "animation.gif";
+        a.click();
+      });
+      gif.render();
+    };
+
+    // Dark mode toggle
+    const darkBtn = document.getElementById("darkModeBtn");
+    let dark = false;
+    darkBtn.onclick = () => {
+      dark = !dark;
+      document.body.style.background = dark ? "#1e1e1e" : "white";
+      document.body.style.color = dark ? "#ddd" : "black";
+      document.querySelectorAll("button, input, select").forEach(el => {
+        el.style.background = dark ? "#2d2d2d" : "";
+        el.style.color = dark ? "#eee" : "";
+        el.style.border = dark ? "1px solid #444" : "";
+      });
+    };
+
+    // Bonus 1: Frame scrubbing with mouse drag
+    const scrubBtn = document.getElementById("scrubBtn");
+    let scrubbing = false;
+    scrubBtn.onclick = () => { scrubbing = !scrubbing; alert("Frame scrubbing " + (scrubbing ? "enabled" : "disabled")); };
+    canvas.addEventListener("mousemove", e => {
+      if (!scrubbing || !currentSeq) return;
+      const pos = Math.floor((e.offsetX / canvas.width) * currentSeq.length);
+      frameIndex = Math.max(0, Math.min(currentSeq.length - 1, pos));
+      drawFrame();
+    });
+
+    // Bonus 2: Randomize animation order
+    document.getElementById("randomizeBtn").onclick = () => {
+      const keys = Object.keys(sequences);
+      if (!keys.length) return;
+      const random = keys[Math.floor(Math.random()*keys.length)];
+      select.value = random;
+      select.onchange();
+    };
+  </script>
+
+</body>
+</html>
