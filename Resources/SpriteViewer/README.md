@@ -2,6 +2,8 @@
 
 A lightweight HTML tool for previewing and testing sprite sheets with JSON atlases.  
 This tool works entirely in your browser (no install required).
+ 
+[🔗Sprite Viewer](https://radicallabsapp.github.io/development/Resources/SpriteViewer/viewer.html)
 
 ---
 
