@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4b1q5xvke07"]
+
+[ext_resource type="PackedScene" uid="uid://c8e52jj2pelf1" path="res://scenes/player.tscn" id="1_g4lti"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ay3b1"]
+distance = 2.0
+
+[node name="Pie Game" type="Node2D"]
+position = Vector2(11, 3)
+
+[node name="Player" parent="." instance=ExtResource("1_g4lti")]
+position = Vector2(-11, 6)
+scale = Vector2(0.933755, 1.00842)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-11, -3)
+zoom = Vector2(5, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-11, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 21)
+scale = Vector2(0.998048, 1)
+shape = SubResource("WorldBoundaryShape2D_ay3b1")
