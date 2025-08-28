@@ -32,5 +32,6 @@ development/
 * [Markdown Cheat Sheet](./Resources/Markdown/README.md)
 * [TortoiseGit](./Resources/TortoiseGit/README.md)
 * [Pi Network SDK](https://github.com/pi-apps/pi-platform-docs)
+* [Pi Network Developer Guide](https://pi-apps.github.io/community-developer-guide/)
 
 ---
