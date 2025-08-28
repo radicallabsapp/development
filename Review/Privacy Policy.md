@@ -7,7 +7,7 @@ practices described in this Privacy Policy.
 
 Radical Labs platform is dedicated to blockchain app development, Including but not limited
 to the business for goods or services, asset transactions and related services
-(hereinafter referred to as "the service"). For description convenience, [Game][^2] platform
+(hereinafter referred to as "the service"). For description convenience, [Game, "Runaway Pastry"][^2] platform
 will be referred to as “we” or the other applicable forms of first-person pronouns in this
 agreement. This website is developed and constructed based on the ecological needs
 of Pi Network. For the convenience of expression, Pi Network will be referred to as "Pi"
@@ -20,7 +20,7 @@ referred to as the "both Parties" and individually as one party.
 > **⚠️ We hereby kindly remind you:**
 > Please keep your Pi account properly. If you lose your Pi account, it means that you
 > also lose your account on [Game] platform, we will not ask you to fill in your Pi account
-> password and will not collect your secret passphrase [^3]. When you log in to this website, it also means
+> password and will not collect your secret passphrase. When you log in to this website, it also means
 > that you have agreed to Pi's user agreement and privacy policy.
 
 ## Information We Collect
@@ -68,7 +68,7 @@ Data is encrypted in transit, Your data is transferred over a secure connection.
 * **App activity:** App interactions and Other actions
 * **Personal info:** User IDs, Device or other IDs
 * **App info and performance:** Diagnostics
-* **Location:** Approximate location [^4]
+* **Location:** Approximate location
 * **Financial info:** Purchase history
 
 ## Your Choices
@@ -99,8 +99,3 @@ responsible for any lost which caused directly or indirectly by the delay, failu
 connect to the Internet, transmit or receive any notices and information.
 
 ---
-
-[^1]: Radical Labs platform is dedicated to **blockchain app development**
-[^2]: Use "Radical Labs" instead of "[Game]". Or use "Game Name" to make the PP specific to this application
-[^3]: changed from "account"
-[^4]: We might not collect location data
