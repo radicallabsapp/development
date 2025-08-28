@@ -5,7 +5,7 @@ information when you use our browser-based games, websites, and related services
 (collectively, the "Services"). By accessing or using the Services, you consent to the
 practices described in this Privacy Policy.
 
-Radical Labs platform is dedicated to the block chain game [^1], Including but not limited
+Radical Labs platform is dedicated to blockchain app development, Including but not limited
 to the business for goods or services, asset transactions and related services
 (hereinafter referred to as "the service"). For description convenience, [Game][^2] platform
 will be referred to as “we” or the other applicable forms of first-person pronouns in this
