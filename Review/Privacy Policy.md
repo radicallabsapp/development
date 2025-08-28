@@ -5,24 +5,23 @@ information when you use our browser-based games, websites, and related services
 (collectively, the "Services"). By accessing or using the Services, you consent to the
 practices described in this Privacy Policy.
 
-Radical Labs platform is dedicated to the block chain game, Including but not limited
+Radical Labs platform is dedicated to the block chain game [^1], Including but not limited
 to the business for goods or services, asset transactions and related services
-(hereinafter referred to as "the service"). For description convenience, [Game] platform
+(hereinafter referred to as "the service"). For description convenience, [Game][^2] platform
 will be referred to as “we” or the other applicable forms of first-person pronouns in this
 agreement. This website is developed and constructed based on the ecological needs
-of Pi Network. for the convenience of expression, Pi Network will be referred to as "Pi"
-later. Pi Browser is a block chain application of Pi. Anyone who use Pi Browser to
-authorize Pi account name to log in [Game] platform can be registered automatically,
-then become to [Game] user. For more convenience, the User is referred to as "you"
-or any other applicable form of the second person pronoun. you and we are collectively
+of Pi Network. For the convenience of expression, Pi Network will be referred to as "Pi"
+later. Pi Browser is a blockchain application of Pi. Anyone who uses Pi Browser to
+authorize their Pi account name to log in [Game] platform can be registered automatically,
+then become a [Game] user. For more convenience, the User is referred to as "you"
+or any other applicable form of the second person pronoun. You and we are collectively
 referred to as the "both Parties" and individually as one party.
 
 > **⚠️ We hereby kindly remind you:**
 > Please keep your Pi account properly. If you lose your Pi account, it means that you
 > also lose your account on [Game] platform, we will not ask you to fill in your Pi account
-> password and will not collect your account. When you log in to this website also means
+> password and will not collect your secret passphrase [^3]. When you log in to this website, it also means
 > that you have agreed to Pi's user agreement and privacy policy.
-> password.
 
 ## Information We Collect
 1. **Usage Data:** We may automatically collect information about how you access and
@@ -69,7 +68,7 @@ Data is encrypted in transit, Your data is transferred over a secure connection.
 * **App activity:** App interactions and Other actions
 * **Personal info:** User IDs, Device or other IDs
 * **App info and performance:** Diagnostics
-* **Location:** Approximate location                   <-- ??
+* **Location:** Approximate location [^4]
 * **Financial info:** Purchase history
 
 ## Your Choices
@@ -100,3 +99,8 @@ responsible for any lost which caused directly or indirectly by the delay, failu
 connect to the Internet, transmit or receive any notices and information.
 
 ---
+
+[^1]: Radical Labs platform is dedicated to **blockchain app development**
+[^2]: Use "Radical Labs" instead of "[Game]". Or use "Game Name" to make the PP specific to this application
+[^3]: changed from "account"
+[^4]: We might not collect location data
