@@ -27,7 +27,7 @@ development/
 
 ## 🚀 Quick Start Guides
 
-* [Sprite Viewer](https://radicallabsapp.github.io/development/Resources/SpriteViewer/viewer.html)
+* [Sprite Viewer](./Resources/SpriteViewer/README.md)
 * [Markdown Cheat Sheet](./Resources/Markdown/README.md)
 * [TortoiseGit](./Resources/TortoiseGit/README.md)
 * [Pi Network SDK](https://github.com/pi-apps/pi-platform-docs)
