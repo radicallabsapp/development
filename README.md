@@ -13,7 +13,7 @@ development/
 │   └── Markdown/  
 ├── Review/
 │   └── documentsUnderReview.md   
-└── Projects/                <-- Application source code
+└── Projects/ 
     ├── README.md
     └── projectName/          
 ```
