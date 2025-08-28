@@ -10,6 +10,7 @@ development/
 ├── README.md
 ├── Resources/
 │   ├── TortoiseGit/
+|   ├── SpriteViewer/
 │   └── Markdown/  
 ├── Review/
 │   └── documentsUnderReview.md   
