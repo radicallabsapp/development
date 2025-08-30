@@ -1,8 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4b1q5xvke07"]
+[gd_scene load_steps=13 format=4 uid="uid://d4b1q5xvke07"]
 
 [ext_resource type="PackedScene" uid="uid://c8e52jj2pelf1" path="res://scenes/player.tscn" id="1_g4lti"]
 [ext_resource type="Texture2D" uid="uid://4t7kc1e5xt2a" path="res://assets/sprites/Level 1 map sheet/map1_tileset.png" id="2_2vjmw"]
 [ext_resource type="PackedScene" uid="uid://bpis38nubs3s7" path="res://scenes/flame.tscn" id="3_t5vws"]
+[ext_resource type="Texture2D" uid="uid://c1p2kke5842fg" path="res://assets/sprites/Kitchen/kitchen.png" id="4_psbla"]
+[ext_resource type="Texture2D" uid="uid://1nhv53o3bmm2" path="res://assets/sprites/background/industrial_bg_2x6_64.png" id="4_vb3yw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7c4h"]
+texture = ExtResource("4_vb3yw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_78t6q"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_p7c4h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5vws"]
 texture = ExtResource("2_2vjmw")
@@ -25,23 +47,71 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_t5vws")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_psbla"]
+texture = ExtResource("2_2vjmw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vb3yw"]
+texture = ExtResource("4_psbla")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_p7c4h"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_vb3yw")
+sources/0 = SubResource("TileSetAtlasSource_psbla")
+
 [node name="Pie Game" type="Node2D"]
 position = Vector2(11, 3)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(26, -44)
-zoom = Vector2(3, 3)
-
-[node name="Player" parent="." instance=ExtResource("1_g4lti")]
-position = Vector2(-11, -30)
-scale = Vector2(0.933755, 1.00842)
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAP//AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAACAAEAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAEAP//AAACAAEAAAAEAP7/AAACAAEAAAAFAP7/AAACAAEAAAAFAP//AAACAAEAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9//3/AAADAAAAAAD+//3/AAADAAAAAAD///3/AAADAAAAAAAAAP3/AAACAAAAAAABAP3/AAACAAAAAAACAP3/AAAAAAAAAAADAP3/AAACAAEAAAAEAP3/AAACAAEAAAAFAP3/AAACAAEAAAADAP//AAAAAAAAAAAGAP3/AAACAAEAAAAGAP7/AAACAAEAAAAGAP//AAACAAEAAAAGAAAAAAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8//3/AAADAAAAAAD7//3/AAADAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAADAAEAAAD8/wEAAAADAAEAAAD9/wEAAAADAAEAAAD+/wEAAAADAAEAAAD//wEAAAADAAEAAAAAAAEAAAADAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAD7//z/AAADAAEAAAD8//z/AAADAAEAAAD9//z/AAADAAEAAAD+//z/AAADAAEAAAD///z/AAADAAEAAAAAAPz/AAADAAEAAAABAPz/AAADAAEAAAACAPz/AAADAAEAAAADAPz/AAADAAEAAAAEAPz/AAADAAEAAAAFAPz/AAADAAEAAAAGAPz/AAADAAEAAAAHAPz/AAADAAEAAAAHAP3/AAACAAEAAAAHAP7/AAACAAEAAAAHAP//AAACAAEAAAAHAAAAAAACAAEAAAAHAAEAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_78t6q")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 254, 255, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0)
+visible = false
+tile_map_data = PackedByteArray("AAD+/wAAAQAAAAAAAAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQACAAAAAAACAAAAAQADAAAAAAA=")
 tile_set = SubResource("TileSet_psbla")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_t5vws")]
-position = Vector2(78, 0)
+position = Vector2(226, -19)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_t5vws")]
-position = Vector2(113, 0)
+position = Vector2(260, -19)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(83, -19)
+tile_map_data = PackedByteArray("AAD+/wAAAQAAAAAAAAD//wAAAQABAAAAAAAAAAAAAQADAAAAAAABAAAAAQADAAAAAAACAAAAAQACAAAAAAADAAAAAQAEAAEAAAADAP//AQAEAAAAAAD9/wAAAQAEAAEAAAD9////AQAEAAAAAAABAP//AAAAAAEAAAAAAP//AAAAAAEAAAD8/wAAAQAAAAEAAAD7/wAAAQADAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_p7c4h")
+
+[node name="Player" parent="." instance=ExtResource("1_g4lti")]
+position = Vector2(-11, -15)
+scale = Vector2(0.933755, 1.00842)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-2.14189, -50.5742)
+zoom = Vector2(3, 3)
