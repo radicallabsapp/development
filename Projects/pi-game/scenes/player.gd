@@ -20,9 +20,9 @@ func _physics_process(delta: float) -> void:
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	# Flip the sprite
-	if direction > 0:
+	if direction < 0:
 		animated_sprite.flip_h =false
-	elif direction <0:
+	elif direction > 0:
 		animated_sprite.flip_h = true
 		
 	#Play animations

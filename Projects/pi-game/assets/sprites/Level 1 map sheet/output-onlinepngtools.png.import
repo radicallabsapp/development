@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv517d76qljdr"
-path="res://.godot/imported/output-onlinepngtools.png-2df13db5f9804e4ff267d0dd33a5210b.ctex"
+uid="uid://bt5tebwjigppx"
+path="res://.godot/imported/output-onlinepngtools.png-04fabd53391d51da4d212b6063b5a26f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/golden pie/output-onlinepngtools.png"
-dest_files=["res://.godot/imported/output-onlinepngtools.png-2df13db5f9804e4ff267d0dd33a5210b.ctex"]
+source_file="res://assets/sprites/Level 1 map sheet/output-onlinepngtools.png"
+dest_files=["res://.godot/imported/output-onlinepngtools.png-04fabd53391d51da4d212b6063b5a26f.ctex"]
 
 [params]
 
