@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgoood1uex3hw"]
+
+[ext_resource type="Texture2D" uid="uid://bamk63xu0lhiw" path="res://assets/sprites/flame/flamespritesheet.png" id="1_etq4e"]
+[ext_resource type="Script" uid="uid://luxwmnotv85x" path="res://scripts/flame_2.gd" id="1_p2bh3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2bh3"]
+atlas = ExtResource("1_etq4e")
+region = Rect2(0, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36i7e"]
+atlas = ExtResource("1_etq4e")
+region = Rect2(8, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l653l"]
+atlas = ExtResource("1_etq4e")
+region = Rect2(16, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfdb0"]
+atlas = ExtResource("1_etq4e")
+region = Rect2(0, 10, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62yf8"]
+atlas = ExtResource("1_etq4e")
+region = Rect2(8, 10, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr38i"]
+atlas = ExtResource("1_etq4e")
+region = Rect2(16, 10, 8, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jrxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2bh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36i7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l653l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfdb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62yf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr38i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etq4e"]
+size = Vector2(8, 6)
+
+[node name="flame2" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_p2bh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5jrxe")
+autoplay = "default"
+frame_progress = 0.724176
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_etq4e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkj55khjuuwep"]
+
+[ext_resource type="Texture2D" uid="uid://ck6pt8b73q25n" path="res://assets/sprites/Level 1 map sheet/roller.png" id="1_uo050"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq8ew"]
+size = Vector2(25, 8)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uo050")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_vq8ew")
+one_way_collision = true
