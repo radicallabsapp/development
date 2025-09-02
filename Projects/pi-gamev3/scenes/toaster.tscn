@@ -39,13 +39,13 @@ region = Rect2(48, 120, 24, 24)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvxrm"]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_n3rle")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_svcjb")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_0ee3p")
 }, {
 "duration": 1.0,
@@ -54,9 +54,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h3a6o")
 }],
-"loop": true,
+"loop": false,
 "name": &"boost",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,9 +82,8 @@ script = ExtResource("1_n3rle")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tvxrm")
-animation = &"move"
+animation = &"boost"
 autoplay = "move"
-frame_progress = 0.639965
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(2, -5)
@@ -95,7 +94,8 @@ position = Vector2(-1, -5)
 target_position = Vector2(-11, 0)
 
 [node name="StompArea" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("3_svcjb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea"]
