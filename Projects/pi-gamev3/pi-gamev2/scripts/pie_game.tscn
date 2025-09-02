@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d4b1q5xvke07"]
+[gd_scene load_steps=20 format=4 uid="uid://d4b1q5xvke07"]
 
 [ext_resource type="PackedScene" uid="uid://c8e52jj2pelf1" path="res://scenes/player.tscn" id="1_g4lti"]
 [ext_resource type="Texture2D" uid="uid://t7myfftb3nep" path="res://assets/sprites/background/Tile.png" id="1_vb3yw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bgoood1uex3hw" path="res://scenes/flame2.tscn" id="7_2axd6"]
 [ext_resource type="PackedScene" uid="uid://c0nfmn65kbjw4" path="res://scenes/coin.tscn" id="7_78t6q"]
 [ext_resource type="Texture2D" uid="uid://1nhv53o3bmm2" path="res://assets/sprites/background/industrial_bg_2x6_64.png" id="8_2axd6"]
+[ext_resource type="PackedScene" uid="uid://ox0f2f0why0l" path="res://scenes/toaster.tscn" id="9_juy8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7c4h"]
 texture = ExtResource("1_vb3yw")
@@ -122,7 +123,7 @@ scale = Vector2(0.933755, 1.00842)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2.14189, -50.5742)
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="platforms2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD5/wAAAAAAAAEAAAD6/wAAAAAAAAEAAAADAAAAAAACAAEAAAACAAAAAAABAAEAAAABAAAAAAADAAEAAAAEAAAAAAAFAAEAAAAFAAAAAAAEAAEAAAAAAAAAAAAAAAEAAAD//wAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAAEAAEAAAD8/wAAAAAFAAEAAAD7/wAAAAADAAEAAAAFAP//AAAEAAAAAAAGAAAAAAADAAEAAAAHAAAAAAAFAAEAAAD9////AAAEAAAAAAA=")
@@ -195,3 +196,6 @@ position = Vector2(241, -5)
 [node name="floor" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD5/wEAAQACAAEAAAD6/wEAAQACAAEAAAD7/wEAAQACAAEAAAD8/wEAAQACAAEAAAD9/wEAAQACAAEAAAD+/wEAAQACAAEAAAD//wEAAQACAAEAAAAAAAEAAQACAAEAAAABAAEAAQACAAEAAAACAAEAAQACAAEAAAADAAEAAQACAAEAAAAEAAEAAQACAAEAAAAFAAEAAQACAAEAAAAGAAEAAQACAAEAAAAHAAEAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_vlubf")
+
+[node name="toaster" parent="." groups=["Player"] instance=ExtResource("9_juy8s")]
+position = Vector2(31, -1)

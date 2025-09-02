@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl85jpheej11o"]
+
+[ext_resource type="AudioStream" uid="uid://ccdurvwxntbq1" path="res://assets/music/2.mp3" id="1_nbeep"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_nbeep")
+volume_db = -28.503
+autoplay = true
