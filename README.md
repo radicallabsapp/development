@@ -31,6 +31,7 @@ development/
 * [Sprite Viewer](./Resources/SpriteViewer/README.md)
 * [Markdown Cheat Sheet](./Resources/Markdown/README.md)
 * [TortoiseGit](./Resources/TortoiseGit/README.md)
+* [Godot Docs](https://docs.godotengine.org/en/3.1/about/index.html)
 * [Pi Network SDK](https://github.com/pi-apps/pi-platform-docs)
 * [Pi Network Developer Guide](https://pi-apps.github.io/community-developer-guide/)
 
