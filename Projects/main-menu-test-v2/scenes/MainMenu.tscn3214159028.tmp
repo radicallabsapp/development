@@ -1,0 +1,129 @@
+[gd_scene load_steps=18 format=3 uid="uid://bfb8vfawwqj2c"]
+
+[ext_resource type="Texture2D" uid="uid://r2m701aoepoe" path="res://assets/sprites/main_menu/yellow_buttons/start_normal.png" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://dwnn7dpjfjlin" path="res://scenes/main_menu.gd" id="1_8a8k8"]
+[ext_resource type="Texture2D" uid="uid://b6v8ldnwn6s6b" path="res://assets/sprites/main_menu/background.png" id="1_ucygd"]
+[ext_resource type="Texture2D" uid="uid://dpdn23av2bwau" path="res://assets/sprites/main_menu/yellow_buttons/start_pressed.png" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://cdu445i24xlgn" path="res://assets/sprites/main_menu/yellow_buttons/start_hover.png" id="3_l72w3"]
+[ext_resource type="Texture2D" uid="uid://bfep24qdqmh01" path="res://assets/sprites/main_menu/yellow_buttons/options_normal.png" id="4_826wr"]
+[ext_resource type="Texture2D" uid="uid://bxrkvs523hqc7" path="res://assets/sprites/main_menu/yellow_buttons/options_pressed.png" id="5_ucygd"]
+[ext_resource type="Texture2D" uid="uid://duhx00wyhlppj" path="res://assets/sprites/main_menu/yellow_buttons/options_hover.png" id="6_mipys"]
+[ext_resource type="Texture2D" uid="uid://cuux1us3ceqbg" path="res://assets/sprites/main_menu/sprite_sheetv3.png" id="8_mipys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a8k8"]
+atlas = ExtResource("8_mipys")
+region = Rect2(0, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7la6k"]
+atlas = ExtResource("8_mipys")
+region = Rect2(24, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nypq"]
+atlas = ExtResource("8_mipys")
+region = Rect2(48, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bky6r"]
+atlas = ExtResource("8_mipys")
+region = Rect2(72, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4mxc"]
+atlas = ExtResource("8_mipys")
+region = Rect2(96, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5faoh"]
+atlas = ExtResource("8_mipys")
+region = Rect2(120, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptake"]
+atlas = ExtResource("8_mipys")
+region = Rect2(144, 72, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hubol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a8k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7la6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nypq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bky6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4mxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5faoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptake")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8a8k8")
+metadata/_edit_use_anchors_ = true
+
+[node name="BACKGROUND" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ucygd")
+stretch_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 781.0
+offset_right = 20.0
+offset_bottom = 821.0
+grow_horizontal = 2
+
+[node name="LOGO" type="AnimatedSprite2D" parent="VBoxContainer"]
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_hubol")
+autoplay = "default"
+
+[node name="BUTTON_CONTAINER" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -246.0
+offset_right = 193.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="StartButton" type="TextureButton" parent="BUTTON_CONTAINER"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_2wh52")
+texture_pressed = ExtResource("2_ow34m")
+texture_hover = ExtResource("3_l72w3")
+
+[node name="OptionsButton" type="TextureButton" parent="BUTTON_CONTAINER"]
+layout_mode = 2
+texture_normal = ExtResource("4_826wr")
+texture_pressed = ExtResource("5_ucygd")
+texture_hover = ExtResource("6_mipys")

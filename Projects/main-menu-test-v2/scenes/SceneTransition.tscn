@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8vvssyk5k8th"]
+
+[ext_resource type="Script" uid="uid://xi2euc0s7x3x" path="res://scenes/scene_transition.gd" id="1_e0bkc"]
+
+[sub_resource type="Animation" id="Animation_7la6k"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8a8k8"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2nypq"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2nypq"]
+_data = {
+&"RESET": SubResource("Animation_7la6k"),
+&"fade_in": SubResource("Animation_2nypq"),
+&"fade_out": SubResource("Animation_8a8k8")
+}
+
+[node name="SceneTransition" type="CanvasLayer"]
+script = ExtResource("1_e0bkc")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+light_mask = 16
+visibility_layer = 16
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FadeOutRect" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2nypq")
+}
+
+[connection signal="animation_finished" from="FadeOutRect" to="." method="_on_fade_out_rect_animation_finished"]
